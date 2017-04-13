@@ -8,8 +8,12 @@ public integer limits = 5;
 public set<id> AccountID {get; set;}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Test Changes in First Child
 
+=======
+// Test Changes in Second Child
+>>>>>>> refs/heads/Second-Child
 =======
 // Test Changes in Second Child
 >>>>>>> refs/heads/Second-Child
