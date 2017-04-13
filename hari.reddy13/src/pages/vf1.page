@@ -1,0 +1,6 @@
+<apex:page >
+<apex:form >
+<apex:commandButton value="Click"/>
+
+</apex:form>
+</apex:page>

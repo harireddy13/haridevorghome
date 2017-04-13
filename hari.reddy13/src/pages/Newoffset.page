@@ -1,0 +1,21 @@
+<apex:page controller="accountPagination_ctrl">
+ <apex:pageBlock >
+  <apex:form >
+      <apex:commandButton value="Search" action="{!searchresult}"/>
+
+  <apex:PageblockTable value="{!accLst}" var="ac">
+      <apex:column headerValue="Name">
+          <apex:outputField value="{!ac.Name}"/>
+      </apex:column>
+      <apex:column headerValue="Id">
+          <apex:outputField value="{!ac.Id}"/>
+      </apex:column>
+  </apex:PageblockTable>
+
+  <apex:commandButton value="FIRST" action="{!fstbtn}" disabled="{!prv}"/>
+  <apex:commandButton value="PRE" action="{!prvbtn}" disabled="{!prv}"/>
+  <apex:commandButton value="NXT" action="{!nextbtn}" disabled="{!nxt}"/>
+  <apex:commandButton value="END" action="{!endbtn}" disabled="{!nxt}"/>
+ </apex:form>
+</apex:pageBlock>
+</apex:page>

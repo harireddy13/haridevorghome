@@ -1,0 +1,26 @@
+<apex:page showHeader="false" controller="apcheckbox2">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+            <apex:pageBlockTable value="{!lrecs}" var="item">
+                <apex:column >
+                    <apex:inputCheckbox value="{!item.selected}" id="checkedone">
+                        <apex:actionSupport event="onclick" action="{!getselected}" reRender="selectedpbs"/>
+                    </apex:inputCheckbox>
+                </apex:column>
+                <apex:column value="{!item.ld.id}"/>
+                <apex:column value="{!item.ld.name}"/>
+                <apex:column value="{!item.ld.phone}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection title="Selected leads" id="selectedpbs">
+            <apex:pageBlockTable value="{!selectedleads}" var="i">
+                <apex:column value="{!i.id}"/>
+                <apex:column value="{!i.name}"/>
+                <apex:column value="{!i.phone}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

@@ -1,0 +1,54 @@
+<apex:page title="{!$Label.site.site_login}" showHeader="false" sidebar="false"       standardStylesheets="false">
+<apex:includeScript value="{!URLFOR($Resource.SiteSamples, '/js/jquery-1.4.2.min.js')}"  />
+  <apex:includeScript value="{!URLFOR($Resource.SiteSamples, '/js/jquery-ui-1.8.6.custom.min.js')}"  />
+<apex:stylesheet value="{!URLFOR($Resource.SiteSamples, '/css/ui-lightness/jquery-ui-1.8.6.custom.css')}"  />        
+ <html lang="en">
+
+<head>
+
+ <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"> 
+$(function() 
+{ 
+ $( "#tabs" ).tabs(); 
+ }); 
+</script>  
+<style> 
+ #tabs .ui-tabs-active 
+  { background: red; } 
+</style>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-static-top navbar-inverse" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="icon-bar"></span><span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                    </button>
+                    <a class="navbar-brand" style="line-height: 0px; padding: 10px 15px;" href="index.php.html">
+                        <img height="30px" src="{!URLFOR($Resource.SiteSamples, 'img/logo.png ')}" />
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse navbar-ex1-collapse" id="tabs">
+                   <ul class="nav navbar-nav">
+                    <li id="Home" class="{!IF($CurrentPage.Name == 'Home','active','')}">
+                        <apex:outputLink value="{!$Page.Home}">Home</apex:outputLink>
+                    </li>
+                    <li id="chatter" class="{!IF($CurrentPage.Name == 'Chatter','active','')}">
+                        <apex:outputLink value="{!$Page.Chatter}">Chatter</apex:outputLink>
+                    </li>
+                    <li id="page3" class="{!IF($CurrentPage.Name == 'page3','active','')}">
+                        <apex:outputLink value="{!$Page.page3}">Room</apex:outputLink>
+                    </li>
+                    <li id="page4" class="{!IF($CurrentPage.Name == 'page4','active','')}">
+                        <apex:outputLink value="{!$Page.page4}">Page4</apex:outputLink>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+
+    </html>
+</apex:page>

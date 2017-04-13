@@ -1,0 +1,25 @@
+<apex:page standardController="Opportunity" tabStyle="Opportunity" extensions="myext" id="thepage">
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"/>
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"/>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/ui-lightness/jquery-ui.css" type="text/css" media="all" />
+    <apex:includeScript value="{!URLFOR($Resource.jquery, 'jquery.tablesorter.min.js')}"/>
+
+    <script type="text/javascript">
+        $j = jQuery.noConflict();    
+        $j(document).ready(function () {
+        $j("[id$=theaddrs]").tablesorter();
+        });    
+    </script>
+
+    <apex:pageBlock id="theaddrsblock">
+        <apex:pageBlockTable value="{!Addrs}" var="a" id="theaddrs" styleClass="tablesorter" headerClass="header">
+            <apex:column headerValue="Name">
+            
+                    <apex:outputText styleClass="header" value="{!a.Name}" />
+               
+             
+            </apex:column>
+
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:page>

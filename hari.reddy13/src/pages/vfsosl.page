@@ -1,0 +1,21 @@
+<apex:page controller="apsosl" showHeader="false">
+    <apex:pageBlock >
+        <apex:pageBlockSection title="Account Records">
+            <apex:pageBlockTable value="{!arecs}" var="item">
+                <apex:column value="{!item.id}"/>
+                <apex:column value="{!item.name}"/>
+                <apex:column value="{!item.phone}"/>
+                <apex:column value="{!item.billingcity}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection title="Lead Records">
+            <apex:pageBlockTable value="{!lrecs}" var="item">
+            <apex:column value="{!item.id}"/>
+            <apex:column value="{!item.name}"/>
+            <apex:column value="{!item.phone}"/>
+                </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    <apex:pageMessages ></apex:pageMessages>
+</apex:page>

@@ -1,0 +1,29 @@
+<apex:page standardController="Account" recordSetVar="Recs">
+<apex:pageblock >
+<apex:pageblockSection title="PageblockTable">
+<apex:pageblockTable value="{!Recs}" var="item">
+<apex:column value="{!item.name}"/>
+<apex:column value="{!item.phone}"/>
+</apex:pageblockTable>
+
+<apex:pageBlockSection title="Data Table">
+<apex:dataTable value="{!Recs}" var="item">
+<apex:column > <apex:outputLink Value="{!item.name}">{!item.name}</apex:outputLink></apex:column>
+<apex:column value="{!item.phone}"/> 
+</apex:dataTable>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Data List">
+<apex:dataList value="{!recs}" var="item">
+{!item.name}
+{!item.phone}
+</apex:dataList>
+</apex:pageBlockSection>
+
+</apex:pageblockSection>
+
+
+
+</apex:pageblock>
+
+</apex:page>

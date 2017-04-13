@@ -1,0 +1,24 @@
+<apex:page showHeader="false" sidebar="False" controller="textInputsCon" action="{!showlist}">
+    <apex:form >
+
+
+       
+     
+      <apex:selectList id="operator" value="{!operator}" size="1">
+      
+     <apex:selectOption itemValue="=" itemLabel="A" value="{!xx}"/>
+     <apex:selectOption itemValue="=" itemLabel="B" value="{!yy}"/>
+
+            <apex:actionSupport event="onChange" action="{!showlist}" reRender="x"/>            
+        </apex:selectList> 
+        
+ 
+         <apex:pageBlock >
+            <apex:pageBlockTable value="{!quoList}" var="q" id="x">
+                <apex:column value="{!q.from1__c}"/>
+                 <apex:column value="{!q.id}"/>
+            </apex:pageBlockTable> 
+
+        </apex:pageBlock>
+    </apex:form>
+    </apex:page>

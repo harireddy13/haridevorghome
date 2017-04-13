@@ -1,0 +1,24 @@
+<apex:page standardController="account" recordSetVar="recs">
+<head>
+<body>    
+<script language="javascript" type="text/javascript">
+    setFilterGrid("table1");
+</script>
+</Body>
+</head>    
+    <apex:form >
+        <apex:pageBlock title="Records">
+            <apex:pageBlockTable value="{!recs}" var="item" id="table1">
+                <apex:column value="{!item.name}"/>
+                <apex:column value="{!item.phone}"/>
+                <apex:column value="{!item.billingcity}"/>
+            </apex:pageBlockTable>
+            <apex:pageBlockSection title="Time">
+                <apex:outputText value="The unformatted time right now is:{!Now()}"/>
+                <apex:outputText value="The Formatted time right now is: {0,date,yyyy.MM.dd G 'at' HH:mm:ss z}">
+                    <apex:param value="{!Now()}"/>
+                </apex:outputText>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

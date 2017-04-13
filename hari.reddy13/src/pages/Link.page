@@ -1,0 +1,7 @@
+<apex:page contentType="Test">
+<apex:form >
+<apex:commandButton value="Click" action="{!openlink}"/>
+
+</apex:form>>
+
+</apex:page>

@@ -1,0 +1,210 @@
+<apex:page standardController="Account" extensions="SampleController" >
+
+<!-- custom settigns urls
+
+https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_variables_global_setup.htm
+
+http://blog.jeffdouglas.com/2010/01/07/using-list-custom-settings-in-salesforce-com/
+
+https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_variables_global_setup.htm?search_text=custom%20settings
+
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_custom_settings.htm#apex_System_ListCustomSetting_getInstance
+
+-->
+  <!-- 
+  
+  
+  
+  trigger.new
+
+map<String,string> codeDecodeMap
+
+list<String> insertedOutletCodeValues = 
+insertedOutletCodeValues.add(lcoation_code__c);
+
+codeDecode query - fetch the code values in insertedOutletCodeValues list
+
+codeDecodeMap.put(string1,string2)
+
+for(trigger.new){
+  if(codeDecodeMap.containsKey(acc.Location_code__c)){
+    acc.location_desc__c = acc.location_code__c + '-' +codeDecodeMap.get(acc.Location_code__c);
+  }
+}
+
+  
+  
+  
+  
+  
+  
+  
+  
+Trigger AccountUpdateByCodeDecode on Account (after insert,after update)
+
+ {
+
+List<Account> acc=new List<Account>();
+List<Code_Decode__c> code=new List<Code_Decode__c>();
+
+
+acc =[Select id, Co_Desc__c from Account where id = '001J000001eabaX'];
+
+if(trigger.isInsert || trigger.isUpdate)
+{
+  
+    for(Code_Decode__c c: trigger.new)
+
+    {
+        if(c.sObject__c!=Null)
+
+        {
+   
+    for(Account a: acc)
+    {
+                  
+           
+         a.Co_Desc__c=c.sObject__c;       
+         
+         
+            
+        }              
+    }
+}           
+        }
+
+    }
+
+  
+  
+  
+  
+  
+  
+   
+create trigger on account for insert or after update, look at code decode object, objectname, fieldname and value, 
+retrieve value to update record of the updated record. AS of now hard code id for the one we created now
+
+  
+  
+  
+  
+  
+  
+  
+  
+  Trigger AccountUpdateByCodeDecode on Account (before insert,before update)
+
+ {
+
+List<Account> acc=new List<Account>();
+List<Code_Decode__c> code=new List<Code_Decode__c>();
+
+
+//acc =[Select id, Co_Desc__c from Account where id = '001J000001eabaX'];
+
+    List<Code_Decode__c> cd = [Select id, sObject__c, ControllingField__c, FieldName__c from Code_Decode__c where id = 'a2rJ0000000JnqN'];
+if(trigger.isInsert || trigger.isUpdate)
+{
+
+    for(Account a:trigger.new)
+    {
+    
+    
+                     
+         a.name = cd[0].sObject__c;  
+         //a.Co_Desc__c=c.sObject__c;       
+         
+         
+            
+                      
+    
+    //acc.add(a);
+}  
+         
+        }
+//insert acc;
+    }
+  
+  
+  
+  
+  
+   -->
+   
+   
+   
+   
+   
+   
+   <!-------
+   
+   Trigger AccountUpdateByCodeDecode on Account (before insert,before update)
+  {
+    Map<String,String> codeDecodeMap=new Map<String,Code_Decode__c>();
+    List<Code_Decode__c> codeDecodelist=[SELECT lcoation_code__c, Field2__c FROM Code_Decode__c WHERE lcoation_code__c IN :(SELECT location_code__c FROM Account
+                                                                                   WHERE ID IN : Trigger.newMap.keySet())];
+    for(Code_Decode__c codeDecode : codeDecodelist)
+      codeDecodeMap.put(codeDecode.lcoation_code__c,codeDecode.Field2__c);
+    for(Account acc : trigger.new)
+      {
+        if(codeDecodeMap.containsKey(acc.Location_code__c))
+          {
+            acc.location_desc__c =acc.location_code__c + '-' +codeDecodeMap.get(acc.Location_code__c);
+             
+          }
+
+      }
+
+
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  Trigger AccountCodeDecodeUpdation on Account (before insert,before update)
+  {
+    Map<String,String> codeDecodeMap=new Map<String,Code_Decode__c>();
+    List<Code_Decode__c> codeDecodelist=[SELECT FieldName__c,sObject__c FROM Code_Decode__c WHERE Field1__c IN (SELECT KeyAccountDescription__c FROM Account
+                                                                                   WHERE ID IN : Trigger.newMap.keySet())];
+    for(Code_Decode__c codeDecode : codeDecodelist)
+      codeDecodeMap.put(codeDecode.FieldName__c,codeDecode.sObject__c);
+    for(Account acc : trigger.new)
+      {
+        if(codeDecodeMap.containsKey(acc.KeyAccountDescription__c))
+          {
+            acc.Dispatch_Code_Description__c =acc.KeyAccountDescription__c + '-' +codeDecodeMap.get(acc.KeyAccountDescription__c);
+             
+          }
+
+      }
+
+
+  }
+  ---------------->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</apex:page>

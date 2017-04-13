@@ -1,0 +1,13 @@
+<apex:page controller="Getdistance" showHeader="false">
+
+<apex:form >
+<apex:pageBlock title="Finddistance">
+<apex:pageBlockSection >
+<apex:pageblockSectionItem >
+<apex:outputText value="From"></apex:outputText>
+<apex:inputtext />
+</apex:pageblockSectionItem>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

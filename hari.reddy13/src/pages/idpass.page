@@ -1,0 +1,15 @@
+<apex:page showHeader="false" controller="idpass">
+    <apex:form >
+        <apex:pageBlock title="Login Page">
+            <apex:pageBlockSection title="User Details">
+                <apex:outputText value="Username"></apex:outputText>
+                <apex:inputText value="{!id}"/>
+                <apex:outputText value="Password"></apex:outputText>
+                <apex:inputText value="{!pd}"/>
+                <apex:commandButton value="Submit" action="{!m1}"/>
+                <apex:outputText value="{!stat}"></apex:outputText>
+            </apex:pageBlockSection>
+            <apex:pageMessages ></apex:pageMessages>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

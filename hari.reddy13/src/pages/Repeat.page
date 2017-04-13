@@ -1,0 +1,7 @@
+<apex:page controller="learnrepeat">
+<apex:repeat value="{!strings}" var="string">
+<apex:outputText value="{!string}"> 
+</apex:outputText>
+</apex:repeat>
+ 
+</apex:page>

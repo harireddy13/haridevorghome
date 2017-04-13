@@ -1,0 +1,23 @@
+<apex:page showheader="false" controller="apsoqlnew">
+<apex:form >
+<apex:pageblock title="Account Details">
+<apex:pageblockSection columns="2">
+
+<apex:outputText value="Account Name"></apex:outputText>
+<apex:inputText value="{!an}"/>
+<apex:outputText value="Phone"></apex:outputText>
+<apex:inputText value="{!ap}"/>
+<apex:outputText value="Billing city"></apex:outputText>
+<apex:inputtext value="{!abc}"/>
+
+</apex:pageblockSection>
+
+<apex:commandButton value="Insert" action="{!m1}"/>
+<apex:commandButton value="Update" action="{!m2}"/>
+<apex:commandButton value="Upsert" action="{!m3}"/>
+<apex:commandButton value="Delete" action="{!m4}"/>
+
+</apex:pageblock>
+<apex:pageMessages ></apex:pageMessages>
+</apex:form>
+</apex:page>

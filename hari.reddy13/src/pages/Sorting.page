@@ -1,0 +1,21 @@
+<apex:page controller="SortController">
+<apex:form >
+
+<apex:pageBlock ><apex:pageblocktable value="{!objectList}" var="x" id="objTable">
+<apex:column >
+  <apex:facet name="header">
+    <apex:outputpanel >                   
+      <apex:commandlink style="text-decoration:underline" action="{!sortByColumn1}" value="Column 1" rerender="objTable">
+        <apex:image value="{!$Resource.UpArrow}" width="10" height="10" /> &nbsp;&nbsp;&nbsp;
+      <apex:image value="{!$Resource.DownArrow}" width="10" height="10" />   
+ 
+    </apex:commandlink></apex:outputpanel>                
+  </apex:facet>
+  <apex:outputfield value="{!x.Name}">
+  </apex:outputfield>  
+</apex:column> 
+</apex:pageblocktable>
+</apex:pageBlock>
+</apex:form>
+
+</apex:page>

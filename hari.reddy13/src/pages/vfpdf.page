@@ -1,0 +1,27 @@
+<apex:page controller="pdf1" sidebar="false" >
+  <apex:form >
+  <apex:pageBlock title="normal view">
+  <apex:tabpanel >
+  <apex:tab label="normal view tab section" labelWidth="450">
+  
+  
+    <apex:pageblocksection title="normal view of accounts">
+    <apex:pageBlockTable value="{!accounts}" var="a">
+    <apex:column value="{!a.name}"/>
+    <apex:column value="{!a.phone}"/>
+    <apex:column value="{!a.billingcity}"/>
+     
+    
+    </apex:pageBlockTable>      
+      </apex:pageblocksection>
+  
+  
+  </apex:tab>
+  </apex:tabpanel>
+  <apex:pageBlockButtons >
+  <apex:commandButton value="View PDF" action="{!pdf}" />
+  
+  </apex:pageBlockButtons>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,23 @@
+<apex:page controller="apsoql" showHeader="false">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Soql Records">
+                <apex:outputText value="Account name"></apex:outputText>
+                <apex:inputText value="{!aname}"/>
+                <apex:outputText value="Account phone"></apex:outputText>
+                <apex:inputText value="{!aphone}"/>
+                <apex:outputText value="Billing city"></apex:outputText>
+                <apex:inputText value="{!acity}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Insert" action="{!insertion}"/>
+                <apex:commandButton value="Update" action="{!updation}"/>
+                <apex:commandButton value="Delete" action="{!Deletion}"/>
+                <apex:commandButton value="Upsert" action="{!upsertion}"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageMessages ></apex:pageMessages>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

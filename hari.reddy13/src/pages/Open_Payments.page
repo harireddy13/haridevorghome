@@ -1,0 +1,5 @@
+<apex:page controller="OpenPayments">
+    <apex:form >
+        <apex:commandButton value="Show" action="{!display}"/>
+    </apex:form>
+</apex:page>
