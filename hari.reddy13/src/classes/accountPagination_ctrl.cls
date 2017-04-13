@@ -7,8 +7,12 @@ public integer recNum = 0;
 public integer limits = 5;
 public set<id> AccountID {get; set;}
 
+<<<<<<< HEAD
 // Test Changes in First Child
 
+=======
+// Test Changes in Second Child
+>>>>>>> refs/heads/Second-Child
 public accountPagination_ctrl(){
     accLst = new List<Account> ();
     accLst_size = new List<Account> ();
