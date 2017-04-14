@@ -1,11 +1,11 @@
 eclipse.preferences.version=1
-endpointApiVersion=38.0
+endpointApiVersion=36.0
 endpointEnvironment=Production/Developer Edition
 endpointServer=login.salesforce.com
 httpsProtocol=true
-ideVersion=38.0
+ideVersion=36.0
 keependpoint=false
-metadataFormatVersion=38.0
+metadataFormatVersion=36.0
 namespacePrefix=
 packageName=unpackaged
 preferToolingDeployment=true
