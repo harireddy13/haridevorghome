@@ -11,9 +11,14 @@ public set<id> AccountID {get; set;}
 // Test Changes in First Child
 
 // Test Changes in Second Child
+<<<<<<< HEAD
 
 // Test Changes in Second Child
 
+=======
+//Second change
+//third change
+>>>>>>> refs/remotes/origin/Second-Child
 public accountPagination_ctrl(){
     accLst = new List<Account> ();
     accLst_size = new List<Account> ();
