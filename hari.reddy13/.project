@@ -12,6 +12,7 @@
 		</buildCommand>
 		<buildCommand>
 			<name>com.salesforce.ide.builder.online</name>
+
 			<arguments>
 			</arguments>
 		</buildCommand>
@@ -19,11 +20,16 @@
 	<natures>
 		<nature>com.salesforce.ide.nature.default</nature>
 		<nature>mega.lightning.lightningNature</nature>
-<<<<<<< HEAD
+
 		<nature>com.salesforce.ide.nature.upgrade</nature>
 		<nature>com.salesforce.ide.nature.inactive</nature>
-=======
+
+
+		<nature>com.salesforce.ide.nature.upgrade</nature>
+		<nature>com.salesforce.ide.nature.inactive</nature>
+
 		<nature>com.salesforce.ide.nature.online</nature>
->>>>>>> refs/remotes/origin/master
+
+
 	</natures>
 </projectDescription>
